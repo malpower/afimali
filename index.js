@@ -27,14 +27,17 @@ async function open(path, manipulator=File)
             return resolve(file);
         });
     });
-    return new manipulator(file);
+    const instance=new manipulator(file);
+    await instance.scan();
+    return instance;
 }
 
 
 module.exports={
     open,
     manipulators: {
-        File
+        File,
+        PngFile: require("./additional-files/PngFile")
     },
     windows: {
         Window

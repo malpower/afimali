@@ -44,6 +44,25 @@ class File
         return id;
     }
     /**
+     * @returns {Buffer}
+     */
+    readAt(offset, length)
+    {
+        const file=privateStores.get(this).file;
+        const buf=Buffer.alloc(length);
+        return new Promise((resolve, reject)=>
+        {
+            fs.read(file, buf, 0, length, offset, (err, read)=>
+            {
+                if (err)
+                {
+                    return reject(err);
+                }                
+                resolve(buf.slice(0, read));
+            });
+        });
+    }
+    /**
      * @returns {Window}
      */
     openWindow(offset, winSize)
@@ -74,6 +93,10 @@ class File
             });
         });
     }
+    /**
+     * @private
+     */
+    async scan(){}
     /**
      * @private
      */
