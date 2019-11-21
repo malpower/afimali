@@ -1,7 +1,7 @@
 {
     "name": "afimali",
     "version": "0.0.1",
-    "description": "Another file manipulate library.",
+    "description": "Another file manupulate library for nodeJS.",
     "main": "index.js",
     "repository": {
         "type": "git",
