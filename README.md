@@ -1,6 +1,13 @@
 # afimali
 Another file manupulate library for nodeJS.
 
+## Install
+
+```bash
+npm install afimali
+```
+
+
 
 ## Basic Usage
 
