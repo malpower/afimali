@@ -37,7 +37,8 @@ module.exports={
     open,
     manipulators: {
         File,
-        PngFile: require("./additional-files/PngFile")
+        PngFile: require("./additional-files/PngFile"),
+        GifFile: require("./additional-files/GifFile")
     },
     windows: {
         Window
