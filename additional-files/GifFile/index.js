@@ -18,6 +18,7 @@ class GifFile extends File
         {
             throw new Error("Not a gif file.");
         }
+        this.version=buf.toString("utf8", 3);
         let logicalScreenDescriptor=await this.readAt(6, 7);
         this.width=logicalScreenDescriptor.readUInt16LE(0);
         this.height=logicalScreenDescriptor.readUInt16LE(2);
@@ -41,7 +42,6 @@ class GifFile extends File
         do
         {
             let segment=await this.blockAnalyst.detect(segmentOffset);
-            console.log({...segment, file: undefined});
             if (segment.type==="Unknown")
             {
                 throw new Error("Unknown block detected");

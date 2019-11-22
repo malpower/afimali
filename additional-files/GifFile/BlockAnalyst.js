@@ -161,7 +161,6 @@ class BlockAnalyst
     {
         let segmentType=await this.file.readAt(offset, 1);
         segmentType=segmentType.readUInt8(0);
-        console.log(`0x${segmentType.toString(16)}`, offset, "SLDKJF");
         let cons=typedSegmentConstructors.get(segmentType);
         if (!cons)
         {
