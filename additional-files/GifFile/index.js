@@ -30,7 +30,7 @@ class GifFile extends File
         this.colorResolution>>=4;
         this.colorResolution+=1;
         this.sortFlag=flags&0x08===0x08;
-        this.globalColorTableLength=2**((flags&0x07)+1);
+        this.globalColorTableLength=(this.globalColorTableFlag?(2**((flags&0x07)+1)):0);
         let globalColorTable=await this.readAt(13, this.globalColorTableLength*3);
         this.globalColorTable=new Array;
         for (let i=0;i<globalColorTable.length;i+=3)
