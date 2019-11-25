@@ -1,6 +1,8 @@
 # afimali
 Another file manupulate library for nodeJS.
 
+Please feel free to raise pull requests on github.
+
 ## Install
 
 ```bash
@@ -114,6 +116,8 @@ Afimali supports reading structure from below file formats:
   - PNG
 
 
+The files above are derived from `File`. Use `openWindow` to manipulate them.
+
 
 
 ### Example
@@ -130,3 +134,10 @@ async function start()
 
 start();
 ```
+
+
+
+
+## Documents
+
+Please visit wiki page at https://github.com/malpower/afimali/wiki for docs.
