@@ -102,3 +102,31 @@ start();
         - close() : `Promise`
           
           close window
+
+
+
+
+## Additional Files
+
+Afimali supports reading structure from below file formats:
+
+  - GIF
+  - PNG
+
+
+
+
+### Example
+
+```javascript
+const lib=require("afimali");
+
+async function start()
+{
+    let file=await lib.open("./test.gif", lib.manipulators.GifFile);
+    console.log(file);
+}
+
+
+start();
+```
